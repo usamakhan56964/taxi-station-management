@@ -1,0 +1,246 @@
+/* Container wrapper 
+.ride-logs-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}*/
+
+/* Inner container */
+.ride-logs {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px grey;
+  overflow-x: auto; /* Horizontal scroll on mobile */
+  flex-direction: column;
+  margin: 6px auto;
+}
+
+.tittle-header {
+  margin: -24px -24px 0px;
+}
+
+.ridelog-tittle{
+  background-color: rgb(31 36 43);
+  color: white;
+  padding: 18px 14px 8px;
+  display: flex;
+  gap: 7px;
+  font-size: 25px;
+}
+
+.ridelog-tittle img{
+  margin-top: -3px;
+}
+
+.ride-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+
+
+
+/* Add button style */
+.ride-logs .add-btn {
+  background-color: #148f21;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  height: 40px;
+  width: 117px;
+  box-shadow: 2px 4px 5px grey;
+}
+
+/* Table styles */
+.ride-logs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width: 600px; /* Prevent table squish on small screens */
+  table-layout: auto; /* allow resizing */
+  word-wrap: break-word;
+}
+
+
+.ride-logs thead {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.ride-logs th {
+  padding: 0.75rem;
+  border-bottom: 2px solid #ccc;
+  text-align: left;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.ride-logs td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Status indicators */
+.ride-logs .active {
+  color: red;
+  font-weight: bold;
+  border: solid red 2px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: #ffd1d1;
+    font-size: small;
+}
+
+.ride-logs .inactive {
+  color: green;
+  font-weight: bold;
+  border: solid green 2px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: #c1fdc1;
+    font-size: small;
+}
+
+/* Action buttons */
+.ride-logs button {
+  margin: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #008B8B;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.assign-value {
+    background-color: #2F4F4F;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+.ride-logs button[onClick*="Add"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+/* ===========================
+   RESPONSIVE DESIGN SECTION
+=========================== */
+/* Keep RideLogs container responsive */
+.ride-logs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 6px auto; /* center it */
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow-x: auto; /* fallback scroll */
+}
+
+/* Table */
+.ride-logs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width: 600px; /* instead of 800px */
+  table-layout: auto; /* allow resizing */
+  word-wrap: break-word;
+}
+
+.ride-logs th,
+.ride-logs td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* ==========================
+   Responsive Media Queries
+========================== */
+
+@media (max-width: 1024px) {
+  .ride-logs {
+    padding: 16px;
+  }
+
+  .ride-logs table {
+    min-width: 500px; /* allow smaller table */
+  }
+
+  .ride-logs th,
+  .ride-logs td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ride-logs {
+    padding: 12px;
+  }
+
+  .ride-logs-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ride-logs table {
+    min-width: 400px;
+  }
+
+  .ride-logs th,
+  .ride-logs td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ride-logs .add-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ride-logs {
+    padding: 10px;
+  }
+
+  .ride-logs table {
+    min-width: 100%; /* take full width */
+  }
+
+  .ride-logs th,
+  .ride-logs td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .ride-logs button {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}

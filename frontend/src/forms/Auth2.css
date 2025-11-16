@@ -1,0 +1,110 @@
+
+/* Container for the forgot password page */
+.fpw-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #393f45;
+}
+
+/* Box for the form */
+.fpw-box {
+    background: rgb(31 36 43);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: solid #212121 1px;
+    box-shadow: 0px 0px 14px black;
+    animation: fpw-fadeInUp 0.6s ease-out;
+}
+
+.fpw-box h2 {
+  margin-bottom: 0.5rem;
+}
+
+.fpw-box p {
+  margin-bottom: 1.5rem;
+}
+
+.fpw-box label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.fpw-box input {
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.fpw-box button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.fpw-box button:hover {
+  background-color: #574bff;
+  animation: fpw-buttonPulse 0.4s ease;
+}
+
+.fpw-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fpw-error {
+  background: #ffdddd;
+  color: #d8000c;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.fpw-success {
+  background: #ddffdd;
+  color: #270;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Keyframes for fade-in + slide-up */
+@keyframes fpw-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for button pulse */
+@keyframes fpw-buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

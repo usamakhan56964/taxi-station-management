@@ -1,0 +1,133 @@
+
+
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  background-color: rgba(40, 20, 60, 0.6);
+  padding: 1rem;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: black;
+  border-top-right-radius: 10px;
+  box-shadow: 3px 5px 10px grey;
+  width: 60px; /* Collapsed width */
+  backdrop-filter: blur(6px);
+}
+
+
+/* Sidebar visible state */
+/* Sidebar expanded */
+.sidebar.open {
+  width: 250px; /* Expanded width */
+}
+
+/* Responsive: hide sidebar fully on small screens */
+@media (max-width: 800px) {
+  .sidebar {
+    left: -250px; /* Move it off screen */
+    width: 0;     /* Collapse width */
+  }
+
+  .sidebar.open {
+    left: 0;      /* Only show when toggled open */
+    width: 250px;
+  }
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.content-center{
+  border: #708090 1px;
+    padding: 9px 0px 93px 2px;
+    background-color: rgb(31 36 43);
+    box-shadow: 0px 0px 8px grey;
+    border-radius: 8px;
+    margin-left: -4px;
+}
+
+/* Navigation container */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+  margin-top: -5px;
+}
+
+/* Individual link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: wheat;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  /*transition: background-color 0.2s ease;*/
+  transition: background-color 0.2s ease, opacity 0.3s ease;
+  font-weight: bolder;
+  white-space: nowrap;
+  background-color: #161616;
+  margin-right: 2px;
+
+  transition: 
+    background-color 0.2s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Hide text when collapsed */
+.sidebar:not(.open) .sidebar-link span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+/* Hover effect */
+.sidebar-link:hover {
+  background-color: #44445a;
+  margin-right: 2px;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  color: #f5deb3; /* lighter wheat */
+}
+
+/* Optional: animate icons inside links */
+.sidebar-link img {
+  transition: transform 0.2s ease;
+}
+
+.sidebar-link:hover img {
+  transform: translateX(4px);
+}
+
+/* Active link styling */
+.sidebar-link.active {
+  background-color: #565676;
+}
+
+
+.sidebar-icon {
+    height: 25px;
+    width: 25px;
+    margin-right: 22px;
+    object-fit: contain;
+    margin-left: -8px;
+}
+
+
+

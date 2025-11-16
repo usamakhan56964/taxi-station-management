@@ -1,0 +1,143 @@
+/*.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #01012c;
+  color: white;
+  padding: 0.5rem 1rem;
+  height: 60px;
+}*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 60px;
+    background-color: rgb(31 36 43);
+    border: solid #a5a5a8 1px;
+    box-shadow: 10px 3px 17px #4c4c4d;border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logout-btn {
+    box-shadow: 0px 2px 6px #9292ba;
+    background-color: #732828;
+    border: #07070b 1px;
+    padding: 0.5rem 1rem;
+    color: #f5f5f5;
+    border-radius: 17px;
+    cursor: pointer;
+    font-weight: bolder;
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #bb2f2f;
+  box-shadow: 0px 4px 10px #853939;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 30px;
+  }
+  .logout-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Preloader Overlay */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 31, 32, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loader Animation */
+.loader {
+  animation: rotate 1s infinite;  
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {   
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;  
+  width: 20px;
+}
+
+.loader:before {
+  animation: ball1 1s infinite;  
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+
+.loader:after {
+  animation: ball2 1s infinite; 
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+/* Keyframes */
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8); }
+  50% { transform: rotate(360deg) scale(1.2); }
+  100% { transform: rotate(720deg) scale(0.8); }
+}
+
+@keyframes ball1 {
+  0% { box-shadow: 30px 0 0 #f8b334; }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    transform: translate(15px,15px);
+  }
+  100% { box-shadow: 30px 0 0 #f8b334; margin-bottom: 10px; }
+}
+
+@keyframes ball2 {
+  0% { box-shadow: 30px 0 0 #97bf0d; }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    transform: translate(15px,15px);
+  }
+  100% { box-shadow: 30px 0 0 #97bf0d; margin-top: 0; }
+}

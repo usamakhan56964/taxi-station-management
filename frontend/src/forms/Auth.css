@@ -1,0 +1,268 @@
+/* src/styles/Auth.css */
+.auth-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  background-color: #393f45;
+}
+
+.container-body{
+    background-color: rgb(31 36 43);
+    height: 100vh;
+    display: flex;
+    height: 86vh;
+    width: 140vh;
+    margin-top: 41px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px black;
+    border: solid #1e1e1e 1px;;
+}
+
+/* Left side with background image */
+.auth-left {
+  flex: 1;
+  background-image: url('../assets/BG-image.jpg');
+  position: relative;
+  margin: 10px 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  padding: 67px;
+}
+
+.auth-left .overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+}
+
+/* Right side form area */
+.auth-right {
+  flex: 1;
+  padding: 3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 120px -62px 120px 21px;
+}
+
+.error-msg{
+  margin-right: 73px;
+}
+
+.auth-right h2 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-right p {
+  margin-bottom: 1.5rem;
+}
+
+.auth-right p a {
+  color: #0866ff;
+  text-decoration: none; /* optional */
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(177 184 243);
+}
+
+.auth-right button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background-color: #0866ff;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-msg {
+  background: #ffdddd;
+  color: #d8000c;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.success-msg {
+  background: #ddffdd;
+  color: #270;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.auth-right form{
+  display: flex;
+  flex-direction: column;
+  margin-right: 24vh;
+  margin-right: 70px;
+}
+
+
+
+
+
+/* ===== Your existing CSS above stays exactly the same ===== */
+
+/* ===== Extra Keyframes (no style changes) ===== */
+
+/* Smooth fade-in for the whole page */
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide up with fade for form area */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glow effect for input focus */
+@keyframes inputGlow {
+  from { box-shadow: 0 0 0 rgba(108, 99, 255, 0); }
+  to { box-shadow: 0 0 8px rgba(108, 99, 255, 0.8); }
+}
+
+/* Button hover pulse */
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Slide down for success/error messages */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-container {
+  animation: fadeInPage 0.8s ease-in-out;
+}
+
+.auth-right {
+  animation: slideUpFade 0.8s ease-out;
+}
+
+input:focus {
+  animation: inputGlow 0.4s ease forwards;
+}
+
+.auth-right button:hover {
+  animation: buttonPulse 0.3s ease;
+}
+
+.error-msg, .success-msg {
+  animation: slideDown 0.4s ease;
+}
+
+
+
+/* ===== Preloader Overlay ===== */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 36, 43, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeInPage 0.3s ease-in-out;
+}
+
+/* ===== Preloader Overlay ===== */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 31, 32, 0.95); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ===== Loader Animation ===== */
+.loader {
+  animation: rotate 1s infinite;  
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {   
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;  
+  width: 20px;
+}
+
+.loader:before {
+  animation: ball1 1s infinite;  
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+
+.loader:after {
+  animation: ball2 1s infinite; 
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+/* ===== Keyframes ===== */
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8); }
+  50% { transform: rotate(360deg) scale(1.2); }
+  100% { transform: rotate(720deg) scale(0.8); }
+}
+
+@keyframes ball1 {
+  0% { box-shadow: 30px 0 0 #f8b334; }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    transform: translate(15px,15px);
+  }
+  100% { box-shadow: 30px 0 0 #f8b334; margin-bottom: 10px; }
+}
+
+@keyframes ball2 {
+  0% { box-shadow: 30px 0 0 #97bf0d; }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    transform: translate(15px,15px);
+  }
+  100% { box-shadow: 30px 0 0 #97bf0d; margin-top: 0; }
+}
+
