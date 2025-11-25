@@ -54,15 +54,6 @@ const Drivers = () => {
     setModalOpen(true);
   };
 
-  /*const closeModal = () => {
-    setModalOpen(false);
-    setForm({ name: '', telephone: '' });
-    setEditId(null);
-  };*/
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async () => {
     if (!form.name.trim() || !form.telephone.trim()) {
@@ -155,43 +146,12 @@ const Drivers = () => {
         <DriversModal
           isEditMode={isEditMode}
           form={form}
-          onChange={handleChange}
+          setForm={setForm} 
           onSubmit={handleSubmit}
           onClose={closeModal}
           animateOut={animateOut}
         />
       )}
-
-      {/* ✅ MODAL FOR ADD/EDIT with Pop-up behavior */}
-      {/*{modalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div
-            className="modal-content modal-pop"
-            className={`modal-content ${animateOut ? 'modal-pop-out' : 'modal-pop-in'}`}
-            onClick={(e) => e.stopPropagation()} // Prevent closing on inside click
-          >
-            <h2>{isEditMode ? 'Edit Driver' : 'Add Driver'}</h2>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="telephone"
-              placeholder="Telephone"
-              value={form.telephone}
-              onChange={handleChange}
-            />
-            <div className="modal-buttons">
-              <button onClick={handleSubmit}>{isEditMode ? 'Update' : 'Add'}</button>
-              <button onClick={closeModal}>Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}*/}
     </section>
   );
 };

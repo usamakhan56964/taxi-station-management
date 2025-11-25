@@ -43,54 +43,6 @@ router.post('/', async (req, res) => {
 });
 
 
-
-
-// UPDATE driver details
-/*router.put('/:id', async (req, res) => {
-  const { id } = req.params;
-  const { name, telephone } = req.body;
-  try {
-    const result = await pool.query(
-      'UPDATE drivers SET name=$1, telephone=$2 WHERE id=$3 RETURNING *',
-      [name, telephone, id]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
-  }
-});*/
-
-// TOGGLE status only
-/*router.put('/:id/status', async (req, res) => {
-  const { id } = req.params;
-  const { status } = req.body;
-  try {
-    const result = await pool.query(
-      'UPDATE drivers SET status=$1 WHERE id=$2 RETURNING *',
-      [status, id]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
-  }
-});*/
-
-// DELETE driver
-/*router.delete('/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    await pool.query('DELETE FROM drivers WHERE id=$1', [id]);
-    res.sendStatus(204);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
-  }
-});*/
-
-
-
 // Deleting a Drivers with auto sequence managing
 // DELETE driver and reset sequence if table empty
 router.delete('/:id', async (req, res) => {
